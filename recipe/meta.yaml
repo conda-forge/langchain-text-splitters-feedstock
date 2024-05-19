@@ -1,5 +1,5 @@
 {% set name = "langchain-text-splitters" %}
-{% set version = "0.0.2" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/langchain_text_splitters-{{ version }}.tar.gz
-  sha256: ac8927dc0ba08eba702f6961c9ed7df7cead8de19a9f7101ab2b5ea34201b3c1
+  sha256: b32ab4f7397f7d42c1fa3283fefc2547ba356bd63a68ee9092865e5ad83c82f9
 
 build:
   noarch: python
