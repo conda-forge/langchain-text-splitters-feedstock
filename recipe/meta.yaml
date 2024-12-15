@@ -1,13 +1,13 @@
 {% set name = "langchain-text-splitters" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/langchain_text_splitters-{{ version }}.tar.gz
-  sha256: 81e6515d9901d6dd8e35fb31ccd4f30f76d44b771890c789dc835ef9f16204df
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langchain_text_splitters-{{ version }}.tar.gz
+  sha256: c596958dcab15fdfe0627fd36ce9d588d0a7e35593af70cd10d0a4a06d69b3ee
 
 build:
   noarch: python
@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - poetry-core >=1.0.0
     - pip
   run:
-    - python >=3.8.1,<4.0
-    - langchain-core >=0.3.15,<0.4.0
+    - python >={{ python_min }}
+    - langchain-core >=0.3.25,<0.4.0
   run_constrained:
     - lxml >=4.9.3,<6.0.0
     - beautifulsoup4 >=4.12.3,<5.0.0
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/langchain-ai/langchain
