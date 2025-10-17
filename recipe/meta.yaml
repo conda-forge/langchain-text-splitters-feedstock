@@ -1,5 +1,5 @@
 {% set name = "langchain-text-splitters" %}
-{% set version = "0.3.11" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langchain_text_splitters-{{ version }}.tar.gz
-  sha256: 7a50a04ada9a133bbabb80731df7f6ddac51bc9f1b9cab7fa09304d71d38a6cc
+  sha256: d8580a20ad7ed10b432feb273e5758b2cc0902d094919629cec0e1ad691a6744
 
 build:
   noarch: python
@@ -17,12 +17,12 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - pdm-backend
+    - hatchling
     - pip
   run:
     - pip >=25.2
     - python >={{ python_min }}
-    - langchain-core <2.0.0,>=0.3.75
+    - langchain-core >=1.0.0,<2.0.0
   run_constrained:
     - lxml >=4.9.3,<6.0.0
     - beautifulsoup4 >=4.12.3,<5.0.0
